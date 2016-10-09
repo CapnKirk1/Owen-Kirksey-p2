@@ -1,0 +1,34 @@
+# Lab 06
+
+Chancellor Owens (810-900-506)
+
+## Instructions
+
+To clean my code (i.e., remove any compiled files), type:
+
+```
+$ make clean
+```
+
+To compile and link  my code, type:
+
+```
+$ make 
+```
+
+To run my code (after compiling it), type:
+
+```
+
+$ ./1730ed hello.txt
+
+```
+
+## Reflection
+
+Compared to my initial brainstorm, 
+We have added color to the program 
+and plan to do the menu next.
+The scroll function while simple,
+is causng the most trouble. 
+Also KEY_RESIZE should get us through resizing the window.

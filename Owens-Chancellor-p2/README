@@ -1,0 +1,39 @@
+# Lab 07
+
+Chancellor Owens (810-900-506)
+
+## Instructions
+
+To clean my code (i.e., remove any compiled files), type:
+
+```
+$ make clean
+```
+
+To compile and link  my code, type:
+
+```
+$ make 
+```
+
+To run my code (after compiling it), type:
+
+```
+
+$ ./1730ed hello.txt
+
+```
+
+## Reflection
+
+Compared to my initial brainstorm, 
+We have added color to the program 
+and plan to do the menu next.
+The scroll function while simple,
+is causng the most trouble. 
+Also KEY_RESIZE should get us through resizing the window.
+
+lab07: we have split up to multiple thing faster but will converge tonight.
+I have implemented a menu using ncurses and found out how to close the program with esape
+I am still having trouble understanding how the program closes 
+without pressing esape. 
