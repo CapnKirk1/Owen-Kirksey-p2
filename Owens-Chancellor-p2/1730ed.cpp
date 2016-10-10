@@ -139,32 +139,38 @@ static void Display()
 }
 
 int main(int argc, char* argv[1]) {
-
-
+  
+  char mesg[] = "Just a String";
+  int rows,cols;
   initscr();                 // start curses mode
   keypad(stdscr,TRUE);
   //  scrollok(stdscr,TRUE);
   noecho();
-  //WINDOW *W;
-  //W = newwin(100,100,1,1);
-  //box(W,0,0);
-
+  getmaxyx(stdscr, rows, cols);
+  // mvprintw(rows/2, (cols-strlen(mesg))/2, "%s", mesg);
+  WINDOW *mainWindow;
+  mainWindow = newwin(rows,cols,0,0);
+  box(mainWindow,0,0);
+  
 
   start_color();
   init_pair(1,COLOR_WHITE,COLOR_BLUE);
   bkgd(COLOR_PAIR(1));
-  refresh();                 // print it on to the real screen
+  wrefresh(mainWindow);                 // print it on to the real screen
 
   
   char str[256] = "";
   if(argc == 2)
     {
+      box(mainWindow, 0, 0);
       strcpy(str, argv[1]);
     }      
   if (strcmp(str, "") == 0)
     {
       printw("Please enter the file you wish to open: ");
+      echo();
       getstr(str);
+      noecho();
     }
     
   int errorCheck = Read(str);
@@ -175,12 +181,12 @@ int main(int argc, char* argv[1]) {
   
   else if (errorCheck == 1)
     {
-      errorMenu();
+      //errorMenu();
       strcpy(str, "");
     }
   else if (errorCheck == 2)
     {
-      errorMenu();
+      // errorMenu();
     }
   int gch;
   int posi;
@@ -250,7 +256,7 @@ int main(int argc, char* argv[1]) {
   return EXIT_SUCCESS;
 } //main
 
-
+/*
 void errorMenu()
 {
 
@@ -269,7 +275,7 @@ void errorMenu()
   delwin(w);
   endwin();
 }
-
+*/
 void menu()
 {
   WINDOW *w;

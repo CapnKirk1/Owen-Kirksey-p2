@@ -35,13 +35,14 @@ static int Read(char *filename)
   return 0;
 
 }
-
+static void Scrolling(){
+  
+}
 /*
-  Display prints the text to a tui
-*/
+  Display prints the text to a tui*/
 static void Display()
 {
-  printw(text);
+  //printw(text);
 }
   
 int main(int argc, char* argv[1]) {
@@ -52,6 +53,9 @@ int main(int argc, char* argv[1]) {
   start_color();
   init_pair(1, COLOR_YELLOW, COLOR_BLUE);
   bkgd(COLOR_PAIR(1));
+  if(getch() == KEY_UP){
+    Scrolling();
+  }
    refresh();                 // print it on to the real screen
  
    
